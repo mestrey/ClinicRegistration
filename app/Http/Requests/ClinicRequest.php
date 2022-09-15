@@ -23,17 +23,19 @@ class ClinicRequest extends FormRequest
      */
     public function rules()
     {
+        $phoneRegex = "regex:/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/";
+
         return [
             'city' => 'required',
             'name' => 'required',
-            'inn' => 'required',
+            'inn' => 'required|numeric|digits:12',
             'adress' => 'nullable',
-            'phone' => 'required',
+            'phone' => ['required', $phoneRegex],
             'email' => 'nullable|email',
             'site' => 'nullable',
             'contactName' => 'required',
             'contactPosition' => 'required',
-            'contactPhone' => 'required',
+            'contactPhone' => ['required', $phoneRegex],
             'contactEmail' => 'nullable|email',
             'personalData' => 'accepted',
         ];

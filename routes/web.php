@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ClinicController;
+use App\Http\Controllers\ClinicClientController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [ClinicController::class, 'create'])->name('home');
-Route::post('/', [ClinicController::class, 'store'])->name('store');
+Route::get('/', [ClinicClientController::class, 'create'])->name('home');
+Route::post('/', [ClinicClientController::class, 'store'])->name('store');

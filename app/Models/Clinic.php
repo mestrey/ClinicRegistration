@@ -2,20 +2,24 @@
 
 namespace App\Models;
 
-class Clinic
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Clinic extends Model
 {
-    public function __construct(
-        public string $city,
-        public string $name,
-        public string $inn,
-        public string $adress,
-        public string $phone,
-        public string $email,
-        public string $site,
-        public string $contactName,
-        public string $contactPosition,
-        public string $contactPhone,
-        public string $contactEmail,
-    ) {
-    }
+    use HasFactory;
+
+    protected $fillable = [
+        'city',
+        'name',
+        'inn',
+        'adress',
+        'phone',
+        'email',
+        'site',
+        'contactName',
+        'contactPosition',
+        'contactPhone',
+        'contactEmail',
+    ];
 }

@@ -16,7 +16,14 @@
         <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <h4 class="pb-4">Клиника</h4>
-            <x-forum.group name="city" text="Город*" />
+            <div class="mb-3">
+                <label for="cityInput" class="form-label">Город*</label>
+                <select name="city" class="form-select" id="cityInput" aria-label="Default select example">
+                    <option value="moscow">Москва</option>
+                    <option value="st-peter">Санкт-Петербург</option>
+                    <option value="kazan">Казань</option>
+                </select>
+            </div>
             <x-forum.group name="name" text="Название*" />
             <x-forum.group name="inn" text="ИНН*" />
             <x-forum.group name="adress" text="Адрес*" />
